@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree&family=Germania+One&family=Russo+One&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Figtree';
+  background-color: #0B083B;
+  color: white;
+  text-align: center;
+}
+
+#sitename {
+  font-family: 'Metal Mania';
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  display: inline-block;
+  padding: .5em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 24px;
+  gap: 24px;
+}
+
+.grid-item {
+  height: 200px;
+  box-sizing: border-box;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+  resize: none;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, .5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-header {
+  box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.grid-item:hover {
+  transform: scale(1.1);
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, .3); 
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, .3);
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, .3);
+}

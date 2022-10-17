@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+Today's Workout
+{% endblock %}
+
+{% block content %}
+<h1>{{ current_user.username }}'s Workouts</h1>
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.date.label(class="form-control-label") }}
+      {{ form.date(class="form-control form-control-lg") }}
+    </div>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+</div>
+<div class="container">
+  {% for workout in workouts %}
+    <a class="grid-item" href="{{ url_for('workout', workout_id=workout.id) }}">
+      <h3 class="grid-header">{{ workout.date.strftime('%A %b %d %Y') }}</h3><br>
+      {% for exercise in workout.exercises %}
+      {{ exercise.name }} {{ exercise.sets }}x{{ exercise.reps }} {{ exercise.weight }}lbs<br>
+      {% endfor %}
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

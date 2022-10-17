@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Helooo
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+  <div>
+    <h2>{{ current_user.username }} Total Workouts: {{ total }}</h2>
+  </div>
+{% else %}
+  <p>Log Your Workouts and Track Your Progress</p>
+  <a href="{{ url_for('login') }}">Login</a> |
+  <a href="{{ url_for('signup') }}">Signup</a>
+{% endif %}
+{% endblock %}
